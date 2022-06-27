@@ -7,5 +7,5 @@ git clone "repository_name"
 create python environment in folder
 
 and run 
-pip install flask
+pip install flask \n
 pip install pickle
