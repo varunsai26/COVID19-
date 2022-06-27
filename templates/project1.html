@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+
+
+
+    
+
+    <style>
+       * {
+  box-sizing: border-box;
+}
+#para{
+    position: absolute;
+    background-color:powderblue;
+    color:red;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.row{
+    display: flex;
+}
+.column{
+    flex: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+        .glass{
+	/* background styles */
+	display: inline-block;
+	position: relative;
+    top: 10px;
+	background-color: green; /*for compatibility with older browsers*/
+	background-image: linear-gradient(green,lightgreen);
+
+	/* text styles */
+	text-decoration: none;
+	color: #fff;
+
+    border-color: #111;
+	font-size: 25px;
+	font-family: sans-serif;
+	font-weight: 100;
+}
+.images{
+    position:absolute;
+
+    top: 100px;
+
+}
+.glass1{
+	/* background styles */
+	display: inline-block;
+	position: relative;
+    top: 10px;
+	background-color: blueviolet; /*for compatibility with older browsers*/
+	background-image: linear-gradient(rgb(6, 0, 128),rgb(144, 182, 238));
+
+	/* text styles */
+	text-decoration: none;
+	color: #fff;
+
+    border-color: #111;
+	font-size: 25px;
+	font-family: sans-serif;
+	font-weight: 100;
+}
+body {
+  background-image: url('/static/IMG/index.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+    </style>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">   
+   
+   
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+    <title>Prediction using covid 19</title>
+</head>
+<body style="background-color:powderblue;">
+    <ul>
+        <li><a class="active" href="https://www.who.int/health-topics/coronavirus"><img src="/static/IMG/navbar_icon.jpg" height="60px" width="120px"></a></li>
+        <li><a href="project2.html" class="glass">TAKE COVID TEST</a></li>
+        <li><a href="https://www.worldometers.info/coronavirus/" class="glass1">CURRENT CASES</a></li>
+      </ul>
+</br>
+
+</a>
+
+
+   
+  <marquee id="para"><strong>Maintain social distancing, wash your hands frequently, use sanitizer and wear mask.</strong></marquee>
+</body>
+</html>

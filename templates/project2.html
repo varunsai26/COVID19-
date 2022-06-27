@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <style>
+      body {
+        background-image: url('/static/IMG/image2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        
+      }
+      .blink_me {
+        animation: blinker 1s linear infinite;
+      }
+      
+      @keyframes blinker {  
+        50% { opacity: 0; }
+      }
+        .image{
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+        }
+    .Fever_table{
+        position:absolute;
+        left: 400px;
+        top: 250px;
+        font-size: 25px;
+        border: 1px;
+        background-color: azure;
+        height: 180px;
+        width: 500px;
+        border-radius: 20px;
+        opacity: 0.8;
+
+    }
+    #newone{
+        position:absolute;
+        left: 580px;
+        top: 500px;
+        height: 50px;
+        width: 100px;
+        font-size: 25px;
+        border-radius: 10px;
+        background-color: aqua;
+    }
+    </style>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>2nd page</title>
+</head>
+<script>
+  
+</script>
+<body>
+    
+    <form action="{{ url_for('predictions')}}" method="POST">
+    <table class="Fever_table">
+        <tr>
+          <th>Fever</th>
+          <th>yes <input type="radio" name="t1"  value="1" required></th>
+          <th>no<input type="radio" name="t1" value="0"></th>
+        </tr>
+        <tr>
+            <th>Cough</th>
+            <th>yes<input type="radio" name="t2" value="1" required></th>
+            <th>no<input type="radio" name="t2" value="0"></th>
+          </tr>
+          <tr>
+            <th>Soar_throat</th>
+            <th>yes<input type="radio" name="t3"  value="1" required></th>
+            <th>no <input type="radio" name="t3" value="0"></th>
+          </tr>
+          <tr>
+            <th>Head_ache</th>
+            <th>yes <input type="radio" name="t4"  value="1" required></th>
+            <th>no<input type="radio" name="t4" value="0"></th>
+          </tr>
+          <tr>
+            <th>shortness_of_breath:</th>
+            <th>yes <input type="radio" name="t5"  value="1" required></th>
+            <th>no<input type="radio" name="t5" value="0"></th>
+          </tr>
+          <tr>
+            <th>Diarrhoea</th>
+            <th>yes<input type="radio" name="t6" value="1" required></th>
+            <th>no<input type="radio" name="t6"  value="0"></th>
+          </tr>
+          <tr>
+            <th>age 60 and above</th>
+            <th>yes<input type="radio" name="t7" value="1" required></th>
+            <th>no<input type="radio" name="t7"  value="0"></th>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <th>male <input type="radio" name="t8" value="1" required></th>
+            <th>female<input type="radio" name="t8"  value="0"></th>
+          </tr>
+          <tr><br><th colspan="3" style="text-align:center;"><input type="submit" id="submit" name="submit" value="submit"></th></tr>
+          
+      </table>
+
+
+
+
+
+    </form>
+
+    
+  
+      {%block content%}
+      
+      {% if  Result['color']=='green'%}
+       <h3 class="card-text blink me  alert alert-success" role="alert" style="color:green; animation: blinker 1s linear infinite;">{{Result.ans}}</h3>
+  
+      {% elif Result['color']=='red' %}
+   
+      
+       <h3 class=" card-text blink me alert alert-danger"  role="alert" style="color: red; animation: blinker 1s linear infinite;">{{Result.ans}}</h3>
+        <h4 class="text-light">Buy a kit from Amazon</h4>
+ 
+       <button type="button" class="text-light btn btn-dark"><a  class ="text-light" href="https://www.amazon.in/Mylab-CoviSelf-COVID-19-Rapid-Antigen/dp/B097165G9J">Order</a></button>
+       {%else %}
+       <p></p>
+      
+        </div>     
+          {% endif %}
+  
+       
+   {%endblock content%} 
+  
+      </body> 
+ 
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
